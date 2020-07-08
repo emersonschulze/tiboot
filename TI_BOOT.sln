@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TI_BOOT", "TI_BOOT\TI_BOOT.csproj", "{BABB42B8-AEDD-4640-978D-D7DC348A64A5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A54BD9DB-285A-43D4-8E28-14F676398CF5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BABB42B8-AEDD-4640-978D-D7DC348A64A5} = {BABB42B8-AEDD-4640-978D-D7DC348A64A5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BABB42B8-AEDD-4640-978D-D7DC348A64A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BABB42B8-AEDD-4640-978D-D7DC348A64A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BABB42B8-AEDD-4640-978D-D7DC348A64A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BABB42B8-AEDD-4640-978D-D7DC348A64A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54BD9DB-285A-43D4-8E28-14F676398CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54BD9DB-285A-43D4-8E28-14F676398CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54BD9DB-285A-43D4-8E28-14F676398CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54BD9DB-285A-43D4-8E28-14F676398CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A87E48B-4F30-4554-88CD-18D94BAC5906}
+	EndGlobalSection
+EndGlobal
