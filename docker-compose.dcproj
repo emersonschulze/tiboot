@@ -3,17 +3,16 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>a54bd9db-285a-43d4-8e28-14f676398cf5</ProjectGuid>
-     <DockerLaunchBrowser>True</DockerLaunchBrowser>
-    <DockerServiceUrl>http://localhost:{ServicePort}</DockerServiceUrl>
+    <ProjectGuid>f358a1a5-a556-44df-9b1b-8a6ea2ebd3d1</ProjectGuid>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>ti_boot</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
-     <None Include="docker-compose.override.yml">
+    <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
     <None Include="docker-compose.yml" />
     <None Include=".dockerignore" />
-    <None Include="docker-compose.ci.build.yml" />
   </ItemGroup>
 </Project>

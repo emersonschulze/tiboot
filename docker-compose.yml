@@ -1,42 +1,35 @@
 version: '3.4'
 
 services:
-  tiboot:
-        image: TI_BOOT/chatboot
-        build:
-          context: .
-          dockerfile: TI_BOOT/Dockerfile
-        links:
-          - db:db
-        ports:
-          - 8001:80
-        depends_on:
-            - db
-
-   db:
-        image: TI_BOOT/mysql
-        ports: 
-            - 3307:3306
-        environment:
-            MYSQL_DATABASE: ChatBoot
-            MYSQL_USER: root
-            MYSQL_PASSWORD: Schulze.10
-            MYSQL_ROOT_PASSWORD: Schulze.10
-        volumes:
-            - mysql:/var/lib/mysql
-        networks:
-            - default
+  ti_boot:
+    image: ${DOCKER_REGISTRY-}tiboot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    links:
+      - db:db
+    depends_on:
+      - db
+    networks:
+      - default
   
+  db:
+    image: mysql
+    ports: 
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: ChatBoot
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Schulze.10
+      MYSQL_ROOT_PASSWORD: Schulze.10
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - default
 
-   phpmyadmin:
-          image: TI_BOOT/phpmyadmin
-          links: 
-              - db:db
-          ports:
-              - 8000:80
-          environment:
-            MYSQL_DATABASE: ChatBoot
-            MYSQL_USER: root
-            MYSQL_PASSWORD: Schulze.10
-            MYSQL_ROOT_PASSWORD: Schulze.10
-      
+  adminer:
+    image: adminer
+    ports:
+       - 8080:8080
+    networks:
+    - default
